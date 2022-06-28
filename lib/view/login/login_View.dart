@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:task1/shared/component/components.dart';
 import 'package:task1/shared/constant/constant.dart';
+import 'package:task1/view/registration/registtration.dart';
 import '../../shared/style/colors.dart';
 
 class LoginView extends StatefulWidget {
@@ -183,10 +184,15 @@ class _LoginViewState extends State<LoginView> {
                           style:
                               openSans(14.sp, Colors.black, fontWeight.medium)),
                       space(0, 8.w),
-                      Text("Sign Up",
-                          textScaleFactor: 1,
-                          style: openSans(14.sp, mainColor.withOpacity(.8),
-                              fontWeight.medium)),
+                      GestureDetector(
+                        onTap: () {
+                          navigateToAndReplacement(context, Registration());
+                        },
+                        child: Text("Sign Up",
+                            textScaleFactor: 1,
+                            style: openSans(14.sp, mainColor.withOpacity(.8),
+                                fontWeight.medium)),
+                      ),
                     ],
                   ),
                   space(32.h, 0),
